@@ -88,21 +88,21 @@
               <tr>
                
                 <th scope="col">Risk summary</th>
-                <th scope="col">Last Reviewed
+                <th scope="col">Control
                 
                 </th>
                 <th scope="col">Rating</th>
               </tr>
             </thead>
             <tbody>
-            
+            {% for risk in risks %}
               <tr>
-               <td>Here is a risk about finance</td>
+               <td>{{ risk.risk }}</td>
               
-                <td>24/11/2020</td>
-                <td><i class="fas fa-frown text-danger"></i></td>
+                <td>{{risk.control}}</td>
+                <td><i class="fas fa-frown text-warning"></i></td>
               </tr>
-          
+          {% endfor %}
             </tbody>
           </table>
 
@@ -186,8 +186,8 @@
         data.addColumn('string', '|Clinical');
         data.addColumn('number', 'Admin');
         data.addRows([
-          ['Incomes', 10],
-          ['Expenses', 12],
+          ['Clinical', 10],
+          ['Admin', 12],
          
         ]);
 

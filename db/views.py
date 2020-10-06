@@ -17,11 +17,13 @@ def finance(request):
     actions = Action.objects.filter(area='Finance', closed=False)
     issues = Issue.objects.filter(area='Finance', closed=False)
     rags = Rag.objects.all()
+    risks = Risk.objects.filter(area='Finance')
     object = {
         'data': data,
         'actions': actions,
         'issues': issues,
-        'rags': rags
+        'rags': rags,
+        'risks': risks
 
 
     }
@@ -33,11 +35,13 @@ def hr(request):
     actions = Action.objects.filter(area='HR', closed=False)
     issues = Issue.objects.filter(area='HR', closed=False)
     rags = Rag.objects.all()
+    risks = Risk.objects.filter(area='HR')
     object = {
         'data': data,
         'actions': actions,
         'issues': issues,
-        'rags': rags
+        'rags': rags,
+        'risks': risks
 
 
     }
