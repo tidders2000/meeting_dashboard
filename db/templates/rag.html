@@ -1,0 +1,34 @@
+{% extends 'base.html' %}{% load static %}{% load crispy_forms_tags %}
+{% block content %}
+<div class="container-fluid">
+
+      <div class="row">
+        <div class="col-12 col-lg-8 offset-lg-2">
+          <h2>Rag</h2>
+           {%for r in rag %}
+          <form method='POST'>
+         
+         
+            <p> {{r.area}} 
+            <select name="tl" id="tl" >
+                    <option value="{{r.rag}}">{{r.rag}}</option>
+                    <option value="Red">Red</option>
+                    <option value="Amber">Amber</option>
+                    <option value="Green">Green</option>
+                   
+            </select>
+          
+            
+            </p>
+            <input type="hidden" name="pk" id="pk" value="{{r.pk}}"/> {% csrf_token %}
+           <button type="submit" class="btn btn-success">Update</button>
+            </form>
+          {% endfor %}
+           
+         
+        </div>
+      </div>
+</div>   
+    
+
+{% endblock %}
