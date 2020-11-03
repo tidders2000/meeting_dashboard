@@ -68,7 +68,7 @@ def clinical(request):
 
 def buildings(request):
 
-    actions = Action.objects.filter(area='Buildinga', closed=False)
+    actions = Action.objects.filter(area='Buildings', closed=False)
     issues = Issue.objects.filter(area='Buildings', closed=False)
     rags = Rag.objects.all()
     risks = Risk.objects.filter(area='Buildings')
