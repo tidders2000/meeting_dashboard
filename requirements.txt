@@ -15,6 +15,8 @@ pybars3==0.9.7
 pycodestyle==2.6.0
 PyMeta3==0.5.1
 PyPDF2==1.26.0
+dj-database-url==0.5.0
+psycopg2-binary==2.8.6
 python-dateutil==2.8.1
 pytz==2020.1
 reportlab==3.5.53
