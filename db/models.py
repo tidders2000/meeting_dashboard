@@ -18,7 +18,7 @@ rag = [('Red', 'Red'),
 
 class Issue(models.Model):
 
-    issue = models.TextField(max_length=254, default='')
+    issue = models.TextField(max_length=600, default='')
     area = models.CharField(max_length=254, choices=area, default='default')
     closed = models.BooleanField(default=False)
     owner = models.CharField(max_length=254, choices=owner, default='Default')
@@ -31,7 +31,7 @@ class Issue(models.Model):
 class Action(models.Model):
     area = models.CharField(max_length=254, choices=area, default='Default')
     owner = models.CharField(max_length=254, choices=owner, default='Default')
-    action = models.TextField(max_length=254, default='')
+    action = models.TextField(max_length=600, default='')
     closed = models.BooleanField(default=False)
     date_complete = models.DateField(auto_now_add=False)
 
@@ -39,8 +39,8 @@ class Action(models.Model):
 class Risk(models.Model):
     area = models.CharField(max_length=254, choices=area, default='Default')
     owner = models.CharField(max_length=254, choices=owner, default='Default')
-    risk = models.TextField(max_length=254, default='')
-    control = models.TextField(max_length=254, default='')
+    risk = models.TextField(max_length=600, default='')
+    control = models.TextField(max_length=600, default='')
     rating = models.CharField(
         max_length=254, choices=rating, default='Default')
     closed = models.BooleanField(default=False)
