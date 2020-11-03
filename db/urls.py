@@ -21,6 +21,8 @@ from .views import *
 urlpatterns = [
     path('finance/', finance, name='finance'),
     path('hr/', hr, name='hr'),
+    path('clinical/', clinical, name='clinical'),
+    path('buildings/', buildings, name='buildings'),
     path('risklog/', risklog, name='risklog'),
     path('issues/', issues, name='issues'),
     path('actions/', actions, name='actions'),

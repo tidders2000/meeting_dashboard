@@ -47,7 +47,7 @@
            
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Clinical
+            <a class="nav-link" href="{% url 'clinical' %}">Clinical
                          {% for r in rags %}
               {% if r.rag == 'Red' and r.area == 'Clinical' %}
                   <i class="fas fa-skull-crossbones text-danger"></i> 
@@ -59,7 +59,7 @@
              {% endfor %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Building & Premises 
+            <a class="nav-link" href="{% url 'buildings' %}">Building & Premises 
                         {% for r in rags %}
               {% if r.rag == 'Red' and r.area == 'Buildings' %}
                   <i class="fas fa-skull-crossbones text-danger"></i> 

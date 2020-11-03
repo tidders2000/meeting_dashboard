@@ -6,7 +6,7 @@ from django.db import models
 area = [('Finance', 'Finance'),
         ('HR', 'HR'), ('Buildings', 'Buildings'), ('Clinical', 'Clinical')]
 owner = [('Nikki', 'Nikki'),
-         ('Simon', 'Simon'), ('Mani', 'Mani'), ('Susan', 'Susan')]
+         ('Simon', 'Simon'), ('Mani', 'Mani'), ('Susan', 'Susan'), ('Rebecca', 'Rebecca'), ('Caroline', 'Caroline'), ('Mike', 'Mike')]
 rating = [('1', '1'), ('2', '2'), ('3', '3')]
 
 month = [('January', 'January'),

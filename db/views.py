@@ -48,6 +48,42 @@ def hr(request):
     return render(request, 'hr.html', object)
 
 
+def clinical(request):
+
+    actions = Action.objects.filter(area='Clinical', closed=False)
+    issues = Issue.objects.filter(area='Clinical', closed=False)
+    rags = Rag.objects.all()
+    risks = Risk.objects.filter(area='Clinical')
+    object = {
+
+        'actions': actions,
+        'issues': issues,
+        'rags': rags,
+        'risks': risks
+
+
+    }
+    return render(request, 'clinical.html', object)
+
+
+def buildings(request):
+
+    actions = Action.objects.filter(area='Buildinga', closed=False)
+    issues = Issue.objects.filter(area='Buildings', closed=False)
+    rags = Rag.objects.all()
+    risks = Risk.objects.filter(area='Buildings')
+    object = {
+
+        'actions': actions,
+        'issues': issues,
+        'rags': rags,
+        'risks': risks
+
+
+    }
+    return render(request, 'building.html', object)
+
+
 def actions_ud(request, pk):
     act = get_object_or_404(Action, pk=pk)
 
