@@ -1,7 +1,10 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
     <head>
         <title>Radcliffe Agenda</title>
+            <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style type="text/css">
             body {
                 font-weight: 200;
@@ -36,6 +39,20 @@
             }
         </style>
     </head>
+
+<style> @font-face {
+
+font-family: "code2000";
+
+src: url("/home/user/static/fonts/code2000.ttf");
+
+}
+
+body {
+
+font-family: "code2000";
+
+}</style>
     <body>
         <div class='wrapper'>
             <div class='header'>
@@ -56,22 +73,28 @@
   
 <h3>Minutes</h3>
            <h4>Issues discussed and closed</h4>
+              <ul>
            {% for issue in issues %}
-           <p> {{issue.issue}}  {{issue.area}}  {{issue.closed.}} {{issue.date}}</p>
+        
+          <li>{{issue.issue}}  {{issue.area}}  {{issue.closed.}} {{issue.date}}</li>
            {% endfor %}
+           </ul>
 
            <h4> Actions still open</h4>
-           {% for action in actions %}
-           <p> {{action.action}} {{action.area}} {{action.date_complete}} {{action.owner}}
+           <ul>
+           {% for action in actions|dictsort:"area" %}
+           <li> <b>{{action.area}}</b> - {{action.action}} {{action.area}} {{action.date_complete}} {{action.owner}}</li>
               {% endfor %}
+              </ul>
 
             <h4> Current Risks</h4>
+            <ol>
             {% for risk in risks %}
 
-            <p>{{risk.risk}} {{rating}}</p>
+            <li>{{risk.risk}} {{rating}}</li>
             {% endfor %}
 
-    
+    </ol>
 
     </div>
        
